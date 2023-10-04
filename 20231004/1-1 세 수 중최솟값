@@ -1,1 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>1-1 세 수 중 최솟값 출력결과</title>
+</head>
+<body>
 
+문제) 100이하의 자연수 A, B, C를 입력받아 세 수 중 가장 작은 값을
+출력하는 프로그램 작성 (정렬 사용X)
+
+    <script>
+        function solution(a, b, c) {
+            let answer = a; // 최솟값을 담을 변수, a 값으로 초기화
+
+            if ( answer >= b) {
+                answer = b;
+            }
+            if ( answer >= c) {
+                answer = c;
+            }
+
+            return answer;
+
+            // 1) answer 에 a 저장
+            // 2) answer 과 b 비교
+            // 2-1) answer >= b 면, a 보다 b가 작으므로 answer에 b 저장
+            // 2-1-1) answer >= c 면, b보다 c가 작으므로 answer에 c 저장 -> 최솟값
+            // 2-2) answer < b 면, a 와 b 중 최솟값은 a이므로 answer = a
+            // 2-2-1) answer < b 면, a와 c 중 최솟값은 aa이므로 answer = a
+            
+        }
+
+        console.log(solution(-6, 5, 0));
+    </script>
+</body>
+</html>
