@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+        <title>출력결과</title>
+</head>
+<body>
+<script>
+            function solution(n){
+                let answer=0;
+                // 방법1)
+                //for(i=1; i<=n; i++) {
+                  //answer += i; 
+                //}
+
+                // 방법2)
+                answer = ( n * ( n + 1 ) ) / 2;
+
+                return answer;
+            }
+
+            console.log(solution(10));
+        </script>
+</body>
+</html>
