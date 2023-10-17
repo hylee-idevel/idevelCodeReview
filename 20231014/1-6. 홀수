@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>홀수</title>
+</head>
+<body>
+
+    <h2>문제: 1-6. 홀수 </h2>
+    <P>7개의 자연수가 주어질 때, 이들 중 홀수인 자연수들을 모두 골라 그 합을 구하고. 고른 홀수들 중 최소값을 찾는 프로그램을 작성하세요.</P>
+    <p>예) 12 77 38 41 53 85 중 홀수는 77 41 53 85 이므로 합은 77 + 41 + 53 + 85 = 256 이 되고,</p>
+    <p>홀수들 중 최소값은 41이 된다.</p>
+
+<script>
+    function solution(arr) {
+        // arr은 배열
+        let answer = [];
+        let oddArr = [];
+        let sum=0, min=1000;
+
+        oddArr = arr.filter(arr => (arr % 2 == 1)); // arr 배열에서 홀수인 값만 찾아서 oddArr 배열에 저장.
+        sum = oddArr.reduce(function(accumulator, currentValue, currentIndex, array) {
+            return accumulator + currentValue;
+        }); // oddArr 배열에 있는 값들의 합 구하는 메소드: reduce();
+
+        min = Math.min(...oddArr); // oddArr 배열에 있는 최솟값 구하기
+
+        answer['홀수의 합'] = sum;
+        answer['홀수 중 최소값'] = min;
+        return answer;
+    }
+
+    let arr = [12, 77, 38, 41, 53, 92, 85]; // 배열
+    console.log(solution(arr)); // 배열을 매개변수로 전달
+
+</script>
+
+</body>
+</html>
