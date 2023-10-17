@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>최솟값 구하기</title>
+</head>
+<body>
+
+    <h2>문제: 1-7. 10부제</h2>
+
+
+<script>
+    function solution(day, arr) {
+        // arr은 배열
+        let answer = 0;
+        let resArr = arr.filter(arr => (arr % 10 == day))
+        answer = resArr.length;
+
+        return answer;
+    }
+
+    let arr = [25, 23, 11, 47, 53, 17, 33]; // 배열
+    console.log(solution(3,arr)); // 배열을 매개변수로 전달
+</script>
+
+</body>
+</html>
