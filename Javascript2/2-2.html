@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>보이는 학생</title>
+</head>
+<body>
+    <p>선생님이 볼 수 있는 최대학생 수 출력</p>
+
+<script>
+    function solution(arr) {
+        let answer = 1, max = arr[0];
+        let arrLen = arr.length;
+
+        for (let i=0; i<arrLen; i++) {
+            if(max < arr[i+1]) {
+                max = arr[i+1];
+                answer += 1;
+            }
+        }
+        return answer;
+    }
+
+    let arr = [130, 135, 148, 140, 145, 150, 150, 153];
+    console.log(solution(arr));
+
+</script>
+
+
+</body>
+</html>

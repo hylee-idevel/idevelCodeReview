@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>점수계산</title>
+</head>
+<body>
+    <p>연속적으로 답을 맞히는 경우 가산점 부여</p>
+    <pre>
+        1번 문제는 +1
+        답을 틀리다다 답이 맞는 처음 문제는 +1
+        연속으로 맞을 경우 두번째는 +2
+                        세번째는 +3
+        답이 맞는 경우 : 1
+        답이 틀린 경우 : 0
+
+        채점 결과 총 점수 출력
+    </pre>
+<script>
+    function solution(arr) {
+        let answer = 0, cnt = 0;
+        let arrLen = arr.length;
+
+        for(let i=0; i<arrLen; i++) {
+            if (arr[i] == 1) {
+                if(i!=0 && 1==arr[i-1]) {
+                    cnt++;
+                }
+            }else {
+                cnt=0;
+            }
+            answer += (arr[i] + cnt);
+        }
+        return answer;
+    }
+    let arr1 = [1, 0, 1, 1, 1, 0, 0, 1, 1, 1];
+    let arr2 = [1, 1, 1, 1, 1, 0, 0, 1, 1, 0];
+    console.log(solution(arr1));
+    console.log(solution(arr2));
+
+</script>
+
+
+
+
+</body>
+</html>
